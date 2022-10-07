@@ -20,7 +20,7 @@ public:
     ATarget &operator=(ATarget const &rhs);
     virtual ~ATarget();
 
-    std::string &getType() const;
+    std::string const &getType() const;
     virtual ATarget *clone() const = 0;
     void getHitBySpell(ASpell const &aspell);
 };

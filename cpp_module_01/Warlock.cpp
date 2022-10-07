@@ -47,14 +47,22 @@ void Warlock::learnSpell(ASpell *aspell)
 
 void Warlock::forgetSpell(std::string spell_name)
 {
-	std::vector<ASpell *>::iterator it = _spell.begin();
+	std::vector<ASpell *>::iterator it = find(_spell.begin(), _spell.end(), spell_name);
 	std::vector<ASpell *>::iterator ite = _spell.end();
-	for (int i = 0; i < _spell.size(); i++)
-	{
-		if (this->_spell[i].getName() == spell_name)
-			delete _spell[i];
+	if (it == ite)
 		return ;
-	}
+	delete *it;
+}
+
+void Warlock::launchSpell(std::string spell_name, ATarget const &atarget)
+{
+	std::vector<ASpell *>::iterator it = find(_spell.begin(), _spell.end(), spell_name);
+	std::vector<ASpell *>::iterator ite = _spell.end();
+	if (it == ite)
+		return ;
+	for (int i = 0; i < _spell.size(); i++)
+
+		_spell[i].launch();
 }
 
 /*

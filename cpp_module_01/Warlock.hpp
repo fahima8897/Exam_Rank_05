@@ -5,6 +5,9 @@
 #include <iomanip>
 #include <string>
 #include <vector>
+#include <algorithm>
+#include "ATarget.hpp"
+#include "ASpell.hpp"
 
 class ASpell;
 class ATarget;
@@ -34,7 +37,7 @@ class Warlock
 
 		std::string _name;
 		std::string _title;
-		std::vector<ASpell*> _spell;
+		std::vector<ASpell *> _spell;
 
 		Warlock();
 		Warlock( Warlock const & src );

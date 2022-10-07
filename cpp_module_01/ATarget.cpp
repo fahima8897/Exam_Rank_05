@@ -24,7 +24,7 @@ ATarget::~ATarget()
 {
 }
 
-std::string ATarget::getType() const
+std::string const &ATarget::getType() const
 {
     return this->_type;
 }
